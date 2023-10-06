@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Edit Profile</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    
+    {{ form.username.label }}
+    {{ form.username(class="form-control") }}
+    
+    {{ form.email.label }}
+    {{ form.email(class="form-control") }}
+    
+    {{ form.password.label }}
+    {{ form.password(class="form-control") }}
+    
+    {{ form.image_url.label }}
+    {{ form.image_url(class="form-control") }}
+    
+    {{ form.header_image_url.label }}
+    {{ form.header_image_url(class="form-control") }}
+    
+    {{ form.bio.label }}
+    {{ form.bio(class="form-control") }}
+    
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+{% endblock %}

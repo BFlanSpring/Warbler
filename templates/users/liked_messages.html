@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <div class="container">
+    <h1>Liked Warbles</h1>
+    <ul class="list-group">
+      {% for message in liked_messages %}
+        <li class="list-group-item">
+          <!-- Display message content here -->
+          {{ message.text }}
+          <form method="POST" action="/unlike/{{ message.id }}" class="unlike-form">
+            <button type="submit" class="btn btn-danger">Unlike</button>
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
